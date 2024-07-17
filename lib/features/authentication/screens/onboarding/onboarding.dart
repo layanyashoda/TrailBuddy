@@ -3,7 +3,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:trailbuddy/utils/constants/image_strings.dart';
 import 'package:trailbuddy/utils/constants/text_strings.dart';
 import 'package:trailbuddy/utils/constants/sizes.dart';
-import 'package:trailbuddy/utils/helpers/helper_functions.dart';
+import 'package:trailbuddy/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:get/get.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -13,24 +14,8 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController();
+  final PageController _pageController = OnboardingController.instance.pageController;
   bool _showSkipButton = true;
-
-  void _skipToLastPage() {
-    _pageController.jumpToPage(2); // Index of the last onboarding page
-  }
-
-  void _nextPage() {
-    if (_pageController.page != null && _pageController.page!.round() < 2) {
-      _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    } else {
-      // Navigate to the next screen after onboarding
-      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => NextScreen()));
-    }
-  }
 
   @override
   void initState() {
@@ -81,7 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             right: 20.0,
             child: _showSkipButton
                 ? TextButton(
-              onPressed: _skipToLastPage,
+              onPressed: OnboardingController.instance.skipToLoginPage,
               style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -121,7 +106,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             bottom: 20.0,
             right: 20.0,
             child: FloatingActionButton(
-              onPressed: _nextPage,
+              onPressed: OnboardingController.instance.nextPage,
               backgroundColor: Colors.blue,
               child: const Icon(
                 Icons.arrow_forward,
@@ -137,7 +122,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
-    super.key, required this.image, required this.title, required this.subTitle,
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
   });
 
   final String image, title, subTitle;
@@ -159,7 +147,7 @@ class OnBoardingPage extends StatelessWidget {
           left: 0.0,
           right: 0.0,
           child: Padding(
-            padding: const EdgeInsets.all(TrailSizes.defaultSpace),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
                 Text(
@@ -167,7 +155,7 @@ class OnBoardingPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: TrailSizes.spaceBtwItems),
+                const SizedBox(height: 16.0),
                 Text(
                   subTitle,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),

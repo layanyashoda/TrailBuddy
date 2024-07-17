@@ -4,11 +4,11 @@ class TrailImages {
 
   // -- App Logos
   static const String darkAppLogo = "assets/logos/trailbuddy-black.png";
-  static const String lightAppLogo = "assets/logos/trailbuddy-white.png";
+  static const String lightAppLogo = "assets/logos/trailbuddy-white.png0";
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
-  static const String facebook = "assets/logos/facebook.png";
+  static const String facebook = "assets/logos/facebook-icon.png";
   static const String instagram = "assets/logos/instagram.png";
 
   // -- Onboarding Images
