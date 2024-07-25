@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trailbuddy/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:trailbuddy/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:trailbuddy/utils/theme/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Initialize the OnboardingController
     Get.put(OnboardingController());
 
     return GetMaterialApp(

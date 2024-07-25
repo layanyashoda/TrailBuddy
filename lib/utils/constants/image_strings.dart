@@ -15,4 +15,13 @@ class TrailImages {
   static const String onBoardingImage1 = "assets/images/on_boarding_images/hiking1.jpg";
   static const String onBoardingImage2 = "assets/images/on_boarding_images/hiking2.jpg";
   static const String onBoardingImage3 = "assets/images/on_boarding_images/hiking3.jpg";
+
+  // -- Others
+  static const String productsPic = "";
+  static const String productsSalePic = "";
+  static const String staticSuccessPic = "assets/images/others/staticSuccessPic.png";
+  static const String deliveredInPlanePic = "";
+  static const String deliveredEmailPic = "assets/images/others/emailDelivered.png";
+  static const String verifyPic = "assets/images/others/verifyPic.png";
+  static const String forgotPassword = "assets/images/others/forgotPassword.png";
 }

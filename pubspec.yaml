@@ -25,7 +25,7 @@ dependencies:
   iconsax: ^0.0.8
 
   # State Management
-  get: ^4.6.5
+  get: ^4.6.6
   get_storage: ^2.1.1
 
 #---------------- ./ PACKAGES END ----------#
@@ -54,6 +54,7 @@ flutter:
     - assets/logos/
     - assets/icons/
     - assets/images/on_boarding_images/
+    - assets/images/others/
 
   #------------------ LOCAL FONTS --------------#
   fonts:
