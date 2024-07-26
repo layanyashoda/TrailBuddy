@@ -15,5 +15,8 @@ TrailBuddy is a mobile app that enhances hiking by providing trail discovery, ac
 - <strong> Budget Management- </strong>TrailBuddy's unique budget planner/tracker helps users plan hikes, a feature not found in other hiking apps.
 - <strong> Safety and Weather Notifications- </strong>TrailBuddy offers real-time safety tips and weather updates, making it an ideal hiking assistant.
 
+## Credits
+Some features and inspirations were drawn from the "AllTrails" and "Pekoe Trails" apps. Many thanks to the contributors and developers of these apps for their valuable insights and functionalities.
+
 
 
