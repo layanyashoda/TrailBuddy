@@ -33,16 +33,18 @@ class TrailTexts {
   static const String iAgreeTo = "I agree to";
   static const String privacyPolicy = "Privacy Policy";
   static const String termsOfUse = "Terms of use";
+  static const String and = "and";
   static const String verificationCode = "Verification Code";
   static const String resendEmail = "Resend E-Mail";
   static const String resendEmailIn = "Resend E-Mail In";
+  static const String done = "Done";
 
   // Authentication Headings Text
   static const String logInTitle = "Welcome Back";
   static const String logInSubTitle = "Discover New Trails";
   static const String signupTitle = "Let's create your account";
   static const String forgetPasswordTitle = "Forget Password";
-  static const String forgetPasswordSubTitle = "Forget Password Sub Title";
+  static const String forgetPasswordSubTitle = "Please enter your email to recover your account";
   static const String changeYourPasswordTitle = "Password Reset Email Sent";
   static const String changeYourPasswordSubTitle = "Password Reset Email Sent";
   static const String confirmEmail = "Verify your email address!";
