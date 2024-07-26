@@ -23,7 +23,7 @@ Some features and inspirations were drawn from the "AllTrails" and "Pekoe Trails
 
 Contributors names and contact info
 
-layanyashoda
-MIYUMINIMSARA
-lasanthapradeep7
+- layanyashoda
+- MIYUMINIMSARA
+- lasanthapradeep7
 
