@@ -19,4 +19,11 @@ TrailBuddy is a mobile app that enhances hiking by providing trail discovery, ac
 Some features and inspirations were drawn from the "AllTrails" and "Pekoe Trails" apps. Many thanks to the contributors and developers of these apps for their valuable insights and functionalities.
 
 
+## Authors
+
+Contributors names and contact info
+
+- layanyashoda
+- MIYUMINIMSARA
+- lasanthapradeep7
 
