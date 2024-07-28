@@ -23,9 +23,9 @@ Some features and inspirations were drawn from the "AllTrails" and "Pekoe Trails
 
 Contributors names and contact info
 
-- layanyashoda
-- MIYUMINIMSARA
-- lasanthapradeep7
-- kavindumihiran2001
-- Inura26
+- layanyashoda : layanyasoda@gmail.com
+- MIYUMINIMSARA : miyuminimsara09@gmail.com
+- lasanthapradeep7 : lasanthapradeep751@gmail.com
+- kavindumihiran2001 : kavindumihiran2001@gmail.com
+- Inura26 : inuramanjitha@gmail.com
 
