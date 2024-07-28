@@ -46,4 +46,5 @@ For any inquiries or support, please contact us at:
 - Trail Discovery: Browse through a variety of trails available in different regions.
 - Accommodation Booking: Find and book accommodations near your chosen trails.
 - Budget Planning: Use the budget planner to manage your hiking expenses.
+- Safety Tips: Get real-time safety tips relevant to your hiking location.
   
