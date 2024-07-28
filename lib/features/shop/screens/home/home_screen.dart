@@ -21,6 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void navigateToDetailedScreen(Destination destination) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailedDestinationScreen(destination: destination),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: const [
                           Text(
                             'Current Location',
@@ -63,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           SizedBox(height: 4),
                           Row(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(Iconsax.location, color: Colors.blue),
                               SizedBox(width: 4),
@@ -144,6 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 2h 55m',
                   )),
                   onFavoriteToggle: toggleFavorite,
+                  onCardTap: navigateToDetailedScreen,
                 ),
                 PopularDestinationCard(
                   destination: Destination(
@@ -159,6 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '3.30 mi | Est. 2h 10m',
                   )),
                   onFavoriteToggle: toggleFavorite,
+                  onCardTap: navigateToDetailedScreen,
                 ),
                 const SizedBox(height: 20),
                 Row(
@@ -195,6 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '1.00 mi | Est. 34 min',
                   )),
                   onFavoriteToggle: toggleFavorite,
+                  onCardTap: navigateToDetailedScreen,
                 ),
                 PopularDestinationCard(
                   destination: Destination(
@@ -210,6 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 4h 56m',
                   )),
                   onFavoriteToggle: toggleFavorite,
+                  onCardTap: navigateToDetailedScreen,
                 ),
               ],
             ),
@@ -267,95 +281,106 @@ class PopularDestinationCard extends StatelessWidget {
   final Destination destination;
   final bool isFavorite;
   final Function(Destination) onFavoriteToggle;
+  final Function(Destination) onCardTap;
 
   const PopularDestinationCard({
     Key? key,
     required this.destination,
     required this.isFavorite,
     required this.onFavoriteToggle,
+    required this.onCardTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 2,
-            blurRadius: 5,
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: Stack(
-          children: [
-            Image.asset(
-              destination.imagePath,
-              height: 200,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            Positioned(
-              top: 8,
-              right: 8,
-              child: IconButton(
-                icon: Icon(
-                  isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? Colors.red : Colors.white,
-                ),
-                onPressed: () => onFavoriteToggle(destination),
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                padding: const EdgeInsets.all(12.0),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.black.withOpacity(0.6),
-                      Colors.transparent,
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      destination.title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      destination.location,
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 14,
-                      ),
-                    ),
-                    Text(
-                      destination.price,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+    return GestureDetector(
+      onTap: () => onCardTap(destination),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 2,
+              blurRadius: 5,
             ),
           ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Stack(
+            children: [
+              Image.asset(
+                destination.imagePath,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              Positioned(
+                top: 10,
+                right: 10,
+                child: GestureDetector(
+                  onTap: () => onFavoriteToggle(destination),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2),
+                      color: isFavorite ? Colors.red : Colors.white,
+                    ),
+                    child: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      color: isFavorite ? Colors.white : Colors.red,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.black54, Colors.transparent],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        destination.title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        destination.location,
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        destination.price,
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -368,55 +393,60 @@ class Destination {
   final String location;
   final String price;
 
-  Destination({
+  const Destination({
     required this.imagePath,
     required this.title,
     required this.location,
     required this.price,
   });
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-          other is Destination &&
-              runtimeType == other.runtimeType &&
-              imagePath == other.imagePath &&
-              title == other.title &&
-              location == other.location &&
-              price == other.price;
-
-  @override
-  int get hashCode =>
-      imagePath.hashCode ^ title.hashCode ^ location.hashCode ^ price.hashCode;
 }
 
-class FavoriteScreen extends StatelessWidget {
-  final List<Destination> favoriteDestinations;
+class DetailedDestinationScreen extends StatelessWidget {
+  final Destination destination;
 
-  const FavoriteScreen({Key? key, required this.favoriteDestinations})
-      : super(key: key);
+  const DetailedDestinationScreen({
+    Key? key,
+    required this.destination,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Favorite Destinations'),
+        title: Text(destination.title),
       ),
-      body: favoriteDestinations.isEmpty
-          ? const Center(child: Text('No favorite destinations yet!'))
-          : ListView.builder(
+      body: Center(
+        child: Text(
+          'Detailed information about ${destination.title}',
+          style: const TextStyle(fontSize: 24),
+        ),
+      ),
+    );
+  }
+}
+
+class FavoriteScreen extends StatelessWidget {
+  final List<Destination> favoriteDestinations;
+
+  const FavoriteScreen({
+    Key? key,
+    required this.favoriteDestinations,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Favorites'),
+      ),
+      body: ListView.builder(
         itemCount: favoriteDestinations.length,
         itemBuilder: (context, index) {
           final destination = favoriteDestinations[index];
           return ListTile(
-            leading: Image.asset(
-              destination.imagePath,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
-            ),
             title: Text(destination.title),
             subtitle: Text(destination.location),
+            trailing: Text(destination.price),
           );
         },
       ),
