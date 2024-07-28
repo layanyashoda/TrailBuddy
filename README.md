@@ -1,16 +1,29 @@
-# trailbuddy
+# App for Hikers-Trailbuddy
 
-A new Flutter project.
+TrailBuddy is a mobile app that enhances hiking by providing trail discovery, accommodation booking, budget planning, safety tips, and weather updates.
 
-## Getting Started
+## System requirements
 
-This project is a starting point for a Flutter application.
+- Supported Mobile Devices: iOS/Android
+- Supported Languages: English
+- Supported Countries: All Country
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
+- <strong> All-in-One Solution-</strong> TrailBuddy uniquely offers trails, accommodations, budgeting, and special deals in one app.
+- <strong> Privacy Control- </strong> TrailBuddy enhances trust and safety by allowing users to control when their location is shared.
+- <strong> Budget Management- </strong>TrailBuddy's unique budget planner/tracker helps users plan hikes, a feature not found in other hiking apps.
+- <strong> Safety and Weather Notifications- </strong>TrailBuddy offers real-time safety tips and weather updates, making it an ideal hiking assistant.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Credits
+Some features and inspirations were drawn from the "AllTrails" and "Pekoe Trails" apps. Many thanks to the contributors and developers of these apps for their valuable insights and functionalities.
+
+
+## Authors
+
+Contributors names and contact info
+
+- layanyashoda
+- MIYUMINIMSARA
+- lasanthapradeep7
+
