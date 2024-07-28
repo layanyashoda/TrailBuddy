@@ -26,4 +26,6 @@ Contributors names and contact info
 - layanyashoda
 - MIYUMINIMSARA
 - lasanthapradeep7
+- kavindumihiran2001
+- inura26
 
