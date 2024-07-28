@@ -67,6 +67,7 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/images/others/
     - assets/images/fav/
+    - assets/images/hotels/
 
   #------------------ LOCAL FONTS --------------#
   fonts:

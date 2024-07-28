@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -146,12 +159,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Ella to Ella Rock',
                     location: 'Badulla, Sri Lanka',
                     price: '5.50 mi | Est. 2h 55m',
+                    trailLength: '5.50 mi',
+                    averageTime: '2h 55m',
+                    description: 'A scenic trail from Ella to Ella Rock.',
+                    weather: 'Sunny, 75°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
                     imagePath: 'assets/images/fav/hike_trail_1.jpg',
                     title: 'Ella to Ella Rock',
                     location: 'Badulla, Sri Lanka',
                     price: '5.50 mi | Est. 2h 55m',
+                    trailLength: '5.50 mi',
+                    averageTime: '2h 55m',
+                    description: 'A scenic trail from Ella to Ella Rock.',
+                    weather: 'Sunny, 75°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
                   onCardTap: navigateToDetailedScreen,
@@ -162,12 +183,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Ella Rock Trail',
                     location: 'Badulla, Sri Lanka',
                     price: '3.30 mi | Est. 2h 10m',
+                    trailLength: '3.30 mi',
+                    averageTime: '2h 10m',
+                    description: 'A beautiful trail to Ella Rock.',
+                    weather: 'Partly cloudy, 70°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
                     imagePath: 'assets/images/fav/hike_trail_2.jpg',
                     title: 'Ella Rock Trail',
                     location: 'Badulla, Sri Lanka',
                     price: '3.30 mi | Est. 2h 10m',
+                    trailLength: '3.30 mi',
+                    averageTime: '2h 10m',
+                    description: 'A beautiful trail to Ella Rock.',
+                    weather: 'Partly cloudy, 70°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
                   onCardTap: navigateToDetailedScreen,
@@ -199,12 +228,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Little Adam\'s Peak',
                     location: 'Badulla, Sri Lanka',
                     price: '1.00 mi | Est. 34 min',
+                    trailLength: '1.00 mi',
+                    averageTime: '34 min',
+                    description: 'A short hike to Little Adam\'s Peak.',
+                    weather: 'Sunny, 80°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
                     imagePath: 'assets/images/fav/hike_trail_3.jpg',
                     title: 'Little Adam\'s Peak',
                     location: 'Badulla, Sri Lanka',
                     price: '1.00 mi | Est. 34 min',
+                    trailLength: '1.00 mi',
+                    averageTime: '34 min',
+                    description: 'A short hike to Little Adam\'s Peak.',
+                    weather: 'Sunny, 80°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
                   onCardTap: navigateToDetailedScreen,
@@ -215,12 +252,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: 'Adam\'s Peak',
                     location: 'Rathnapura, Sri Lanka',
                     price: '5.50 mi | Est. 4h 56m',
+                    trailLength: '5.50 mi',
+                    averageTime: '4h 56m',
+                    description: 'A challenging hike to Adam\'s Peak.',
+                    weather: 'Rainy, 65°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
                     imagePath: 'assets/images/fav/hike_trail_4.jpg',
                     title: 'Adam\'s Peak',
                     location: 'Rathnapura, Sri Lanka',
                     price: '5.50 mi | Est. 4h 56m',
+                    trailLength: '5.50 mi',
+                    averageTime: '4h 56m',
+                    description: 'A challenging hike to Adam\'s Peak.',
+                    weather: 'Rainy, 65°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
                   onCardTap: navigateToDetailedScreen,
@@ -234,44 +279,103 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class CategoryItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
+class DetailedDestinationScreen extends StatelessWidget {
+  final Destination destination;
 
-  const CategoryItem({
-    Key? key,
-    required this.icon,
-    required this.label,
-  }) : super(key: key);
+  DetailedDestinationScreen({required this.destination});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(destination.title),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              destination.imagePath,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 250,
             ),
-            child: Row(
-              children: [
-                Icon(icon, color: Colors.blue),
-                const SizedBox(width: 8),
-                Text(label),
-              ],
+            const SizedBox(height: 16),
+            Text(
+              destination.title,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
+            const SizedBox(height: 8),
+            Text(
+              destination.location,
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Trail Length: ${destination.trailLength}',
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Average Time: ${destination.averageTime}',
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Description: ${destination.description}',
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Weather: ${destination.weather}',
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: () {
+                // Open a map app or navigation app with the destination location
+              },
+              icon: const Icon(Icons.navigation),
+              label: const Text('Get Directions'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FavoriteScreen extends StatelessWidget {
+  final List<Destination> favoriteDestinations;
+
+  const FavoriteScreen({Key? key, required this.favoriteDestinations}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Favorites'),
+      ),
+      body: ListView.builder(
+        itemCount: favoriteDestinations.length,
+        itemBuilder: (context, index) {
+          final destination = favoriteDestinations[index];
+          return ListTile(
+            leading: Image.asset(
+              destination.imagePath,
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text(destination.title),
+            subtitle: Text(destination.location),
+            trailing: IconButton(
+              icon: const Icon(Icons.favorite, color: Colors.red),
+              onPressed: () {},
+            ),
+          );
+        },
       ),
     );
   }
@@ -295,92 +399,51 @@ class PopularDestinationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onCardTap(destination),
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              spreadRadius: 2,
-              blurRadius: 5,
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              destination.imagePath,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 150,
             ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Stack(
-            children: [
-              Image.asset(
-                destination.imagePath,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              Positioned(
-                top: 10,
-                right: 10,
-                child: GestureDetector(
-                  onTap: () => onFavoriteToggle(destination),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2),
-                      color: isFavorite ? Colors.red : Colors.white,
-                    ),
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.white : Colors.red,
-                    ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    destination.title,
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.black54, Colors.transparent],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
+                  const SizedBox(height: 4),
+                  Text(
+                    destination.location,
+                    style: const TextStyle(fontSize: 14, color: Colors.grey),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  const SizedBox(height: 4),
+                  Text(
+                    destination.price,
+                    style: const TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        destination.title,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                      IconButton(
+                        icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          color: isFavorite ? Colors.red : Colors.grey,
                         ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        destination.location,
-                        style: const TextStyle(
-                          color: Colors.white70,
-                          fontSize: 14,
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        destination.price,
-                        style: const TextStyle(
-                          color: Colors.white70,
-                          fontSize: 14,
-                        ),
+                        onPressed: () => onFavoriteToggle(destination),
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -392,63 +455,45 @@ class Destination {
   final String title;
   final String location;
   final String price;
+  final String trailLength;
+  final String averageTime;
+  final String description;
+  final String weather;
 
-  const Destination({
+  Destination({
     required this.imagePath,
     required this.title,
     required this.location,
     required this.price,
+    required this.trailLength,
+    required this.averageTime,
+    required this.description,
+    required this.weather,
   });
 }
 
-class DetailedDestinationScreen extends StatelessWidget {
-  final Destination destination;
+class CategoryItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
 
-  const DetailedDestinationScreen({
-    Key? key,
-    required this.destination,
-  }) : super(key: key);
+  const CategoryItem({Key? key, required this.icon, required this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(destination.title),
-      ),
-      body: Center(
-        child: Text(
-          'Detailed information about ${destination.title}',
-          style: const TextStyle(fontSize: 24),
-        ),
-      ),
-    );
-  }
-}
-
-class FavoriteScreen extends StatelessWidget {
-  final List<Destination> favoriteDestinations;
-
-  const FavoriteScreen({
-    Key? key,
-    required this.favoriteDestinations,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Favorites'),
-      ),
-      body: ListView.builder(
-        itemCount: favoriteDestinations.length,
-        itemBuilder: (context, index) {
-          final destination = favoriteDestinations[index];
-          return ListTile(
-            title: Text(destination.title),
-            subtitle: Text(destination.location),
-            trailing: Text(destination.price),
-          );
-        },
+    return Padding(
+      padding: const EdgeInsets.only(right: 16.0),
+      child: Column(
+        children: [
+          CircleAvatar(
+            backgroundColor: Colors.blue.withOpacity(0.2),
+            child: Icon(icon, color: Colors.blue),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            label,
+            style: const TextStyle(fontSize: 14),
+          ),
+        ],
       ),
     );
   }

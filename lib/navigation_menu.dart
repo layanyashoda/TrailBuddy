@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/budget/budget_screen.dart';
 import 'features/favorites/screens/favorites_screen.dart';
 import 'features/profile/screens/profile_screen.dart';
 import 'features/shop/screens/home/home_screen.dart';
@@ -42,5 +43,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [ const HomeScreen(), Container(color: Colors.purple), const FavoritesScreen(), const ProfileScreen(),];
+  final screens = [ const HomeScreen(), BudgetScreen(), const FavoritesScreen(), ProfileScreen(),];
 }
