@@ -27,7 +27,7 @@ Contributors names and contact info
 - MIYUMINIMSARA
 - lasanthapradeep7
 - kavindumihiran2001
-- inura26
+- Inura26
 
 ## Contact Information
 
