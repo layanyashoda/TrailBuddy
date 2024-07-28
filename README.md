@@ -32,3 +32,5 @@ Contributors names and contact info
 ## Contact Information
 
 
+For any inquiries or support, please contact us at:
+
