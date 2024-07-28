@@ -44,4 +44,5 @@ For any inquiries or support, please contact us at:
 ## Usage 
 
 - Trail Discovery: Browse through a variety of trails available in different regions.
+- Accommodation Booking: Find and book accommodations near your chosen trails.
   
