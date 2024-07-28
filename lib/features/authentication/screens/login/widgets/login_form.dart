@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trailbuddy/features/authentication/screens/password_configuration/forget_password.dart';
-import 'package:trailbuddy/features/authentication/screens/signup/widgets/signup.dart';
-import 'package:trailbuddy/navigation_menu.dart';
-import 'package:trailbuddy/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 
+import '../../../../../navigation_menu.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
+import '../../password_configuration/forget_password.dart';
+import '../../signup/widgets/signup.dart';
 
 class TrailLoginForm extends StatelessWidget {
   const TrailLoginForm({super.key});

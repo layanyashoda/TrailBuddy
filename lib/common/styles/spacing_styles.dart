@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:trailbuddy/utils/constants/sizes.dart';
+
+import '../../utils/constants/sizes.dart';
 
 class TrailSpacingStyle {
   static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(

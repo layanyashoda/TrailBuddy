@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:trailbuddy/utils/constants/colors.dart';
-import 'package:trailbuddy/utils/constants/text_strings.dart';
-import 'package:trailbuddy/utils/helpers/helper_functions.dart';
+
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/text_strings.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class TrailFormDivider extends StatelessWidget {
   const TrailFormDivider({super.key, required this.dividerText});

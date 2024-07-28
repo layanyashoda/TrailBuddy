@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:trailbuddy/utils/constants/image_strings.dart';
-import 'package:trailbuddy/utils/constants/text_strings.dart';
-import 'package:trailbuddy/utils/constants/sizes.dart';
-import 'package:trailbuddy/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:get/get.dart';
+
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/text_strings.dart';
+import '../../controllers/onboarding/onboarding_controller.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

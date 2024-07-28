@@ -1,7 +1,8 @@
+import 'package:TrailBuddy/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trailbuddy/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:trailbuddy/utils/theme/theme.dart';
+
+import 'features/authentication/screens/onboarding/onboarding.dart';
 
 
 class App extends StatelessWidget {

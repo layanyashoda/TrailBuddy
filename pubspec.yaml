@@ -1,4 +1,4 @@
-name: trailbuddy
+name: TrailBuddy
 description: "A new Flutter project."
 
 publish_to: 'none'
@@ -19,6 +19,8 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_native_splash: ^2.4.1
   smooth_page_indicator: ^1.2.0
+  flutter_screenutil: ^5.5.3+2
+  flutter_svg: ^1.1.4
 
   # Icons
   cupertino_icons: ^1.0.6
@@ -28,11 +30,20 @@ dependencies:
   get: ^4.6.6
   get_storage: ^2.1.1
 
+  bubble_bottom_bar: ^2.0.0
+  dio: ^4.0.6
+
 #---------------- ./ PACKAGES END ----------#
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/trailbuddy.png"
 
   flutter_lints: ^4.0.0
 
@@ -55,6 +66,7 @@ flutter:
     - assets/icons/
     - assets/images/on_boarding_images/
     - assets/images/others/
+    - assets/images/fav/
 
   #------------------ LOCAL FONTS --------------#
   fonts:

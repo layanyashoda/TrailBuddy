@@ -1,8 +1,8 @@
+import 'package:TrailBuddy/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
+import 'package:TrailBuddy/features/authentication/screens/signup/widgets/verify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trailbuddy/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
-import 'package:trailbuddy/features/authentication/screens/signup/widgets/verify_email.dart';
 
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';

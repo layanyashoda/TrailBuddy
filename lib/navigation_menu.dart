@@ -1,10 +1,12 @@
+import 'package:TrailBuddy/utils/constants/colors.dart';
+import 'package:TrailBuddy/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trailbuddy/utils/constants/colors.dart';
-import 'package:trailbuddy/utils/helpers/helper_functions.dart';
 
-import 'features/shop/screens/home/home.dart';
+import 'features/favorites/screens/favorites_screen.dart';
+import 'features/profile/screens/profile_screen.dart';
+import 'features/shop/screens/home/home_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -40,5 +42,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [ const HomeScreen(), Container(color: Colors.purple), Container(color: Colors.orange), Container(color: Colors.blue)];
+  final screens = [ const HomeScreen(), Container(color: Colors.purple), const FavoritesScreen(), const ProfileScreen(),];
 }

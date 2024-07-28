@@ -1,11 +1,11 @@
+import 'package:TrailBuddy/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trailbuddy/features/authentication/screens/password_configuration/reset_password.dart';
-import 'package:trailbuddy/utils/constants/sizes.dart';
-import 'package:trailbuddy/utils/constants/text_strings.dart';
 
 import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
 class ForgetPassword extends StatelessWidget {

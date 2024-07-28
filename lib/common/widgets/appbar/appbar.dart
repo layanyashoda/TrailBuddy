@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:trailbuddy/utils/constants/sizes.dart';
-import 'package:trailbuddy/utils/device/device_utility.dart';
+
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/device/device_utility.dart';
 
 class TrailAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TrailAppBar({

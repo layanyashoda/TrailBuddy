@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trailbuddy/utils/constants/colors.dart';
-import 'package:trailbuddy/utils/constants/image_strings.dart';
-import 'package:trailbuddy/utils/constants/sizes.dart';
+
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/image_strings.dart';
+import '../../../utils/constants/sizes.dart';
 
 class TrailSocialButtons extends StatelessWidget {
   const TrailSocialButtons({super.key});
