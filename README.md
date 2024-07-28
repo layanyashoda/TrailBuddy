@@ -37,4 +37,5 @@ For any inquiries or support, please contact us at:
 - <strong> Layan Yashoda:
 - <strong> Miyumi Nimsara:
 - <strong> Lasantha Pradeep:
-- <strong> Kavindu Mihiran: 
+- <strong> Kavindu Mihiran:
+- <strong> Inura Manjitha:
