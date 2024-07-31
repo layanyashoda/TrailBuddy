@@ -1,4 +1,4 @@
-// budget_screen.dart
+// lib/features/budget/budget_screen.dart
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -46,6 +46,16 @@ class _BudgetScreenState extends State<BudgetScreen> with SingleTickerProviderSt
       expenses.add({'category': category, 'amount': amount});
       totalSpent += amount;
       _listKey.currentState?.insertItem(expenses.length - 1);
+      if (totalSpent > budget) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('You are over your budget!'),
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            margin: EdgeInsets.only(top: 10.0),
+          ),
+        );
+      }
     });
   }
 
@@ -72,10 +82,15 @@ class _BudgetScreenState extends State<BudgetScreen> with SingleTickerProviderSt
               equipmentBudget: equipmentBudget,
               otherBudget: otherBudget,
             ),
+            const SizedBox(height: 16),
+            Text(
+              'Recommended Accommodation',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            HotelSuggestions(hotels: hotels, fadeAnimation: _fadeAnimation),
             ExpenseInputField(onSubmitted: addExpense),
             ExpenseList(expenses: expenses, listKey: _listKey),
-            HotelSuggestions(hotels: hotels, fadeAnimation: _fadeAnimation),
-            if (totalSpent > budget) BudgetAlert(),
           ],
         ),
       ),
@@ -125,9 +140,29 @@ class BudgetDisplay extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Accommodation: \$${accommodationBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
-        Text('Equipment: \$${equipmentBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
-        Text('Other: \$${otherBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
+        Row(
+          children: [
+            Icon(Iconsax.home, color: Colors.purple),
+            const SizedBox(width: 8),
+            Text('Accommodation: \$${accommodationBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            Icon(Iconsax.briefcase, color: Colors.orange),
+            const SizedBox(width: 8),
+            Text('Equipment: \$${equipmentBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            Icon(Iconsax.box, color: Colors.blue),
+            const SizedBox(width: 8),
+            Text('Other: \$${otherBudget.toStringAsFixed(2)}', style: TextStyle(fontSize: 16)),
+          ],
+        ),
         const SizedBox(height: 16),
       ],
     );
@@ -249,12 +284,5 @@ class HotelSuggestions extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class BudgetAlert extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text('Alert: You are over your budget!', style: TextStyle(color: Colors.red));
   }
 }

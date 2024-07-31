@@ -1,3 +1,4 @@
+// lib/features/shop/screens/home/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/user_avatar.png'), // Placeholder for user avatar
+                      backgroundImage: AssetImage('assets/images/others/profile_picture.jpg'), // Placeholder for user avatar
                       radius: 20,
                     ),
                   ],
@@ -137,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      'Popular Destination',
+                      'Popular Destinations',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -161,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 2h 55m',
                     trailLength: '5.50 mi',
                     averageTime: '2h 55m',
-                    description: 'A scenic trail from Ella to Ella Rock.',
+                    description: 'A short hike starting from Ella Village to Ella Rock. For a couple of miles, you are to walk along the train tracks till you come to the true path. The trail of elevation starts from the ground and goes across a small populated area and then up to the rock. Cocktails Coconut drinks available at the top.',
                     weather: 'Sunny, 75°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
@@ -171,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 2h 55m',
                     trailLength: '5.50 mi',
                     averageTime: '2h 55m',
-                    description: 'A scenic trail from Ella to Ella Rock.',
+                    description: 'A short hike starting from Ella Village to Ella Rock. For a couple of miles, you are to walk along the train tracks till you come to the true path. The trail of elevation starts from the ground and goes across a small populated area and then up to the rock. Cocktails Coconut drinks available at the top.',
                     weather: 'Sunny, 75°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
@@ -185,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '3.30 mi | Est. 2h 10m',
                     trailLength: '3.30 mi',
                     averageTime: '2h 10m',
-                    description: 'A beautiful trail to Ella Rock.',
+                    description: 'These are wonderful trails that begin from through a tea estate. Basically it is said that the starting part is fairly easy while towards the latter part it becomes quite a steep trail. Continue straining to get to the top because the views are great. From this place you will be able to have full view of the city of Ella and even little Adam’s peak. Bring plenty of water. The entire steep climb is in the forest so one will not lack for shade most of the time.',
                     weather: 'Partly cloudy, 70°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
@@ -195,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '3.30 mi | Est. 2h 10m',
                     trailLength: '3.30 mi',
                     averageTime: '2h 10m',
-                    description: 'A beautiful trail to Ella Rock.',
+                    description: 'These are wonderful trails that begin from through a tea estate. Basically it is said that the starting part is fairly easy while towards the latter part it becomes quite a steep trail. Continue straining to get to the top because the views are great. From this place you will be able to have full view of the city of Ella and even little Adam’s peak. Bring plenty of water. The entire steep climb is in the forest so one will not lack for shade most of the time.',
                     weather: 'Partly cloudy, 70°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
@@ -230,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '1.00 mi | Est. 34 min',
                     trailLength: '1.00 mi',
                     averageTime: '34 min',
-                    description: 'A short hike to Little Adam\'s Peak.',
+                    description: 'Little Adam’s Peak, or Mini Adam’s Peak, is another Ella hiking attraction located nearby. The mountain has a height of 1,141 meters and it is comparatively an easy trek when compared to Ellarock. The trek leads you through beautiful terrains of tea plantations and it only lasts for about 45 minutes.',
                     weather: 'Sunny, 80°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
@@ -240,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '1.00 mi | Est. 34 min',
                     trailLength: '1.00 mi',
                     averageTime: '34 min',
-                    description: 'A short hike to Little Adam\'s Peak.',
+                    description: 'Little Adam’s Peak, or Mini Adam’s Peak, is another Ella hiking attraction located nearby. The mountain has a height of 1,141 meters and it is comparatively an easy trek when compared to Ellarock. The trek leads you through beautiful terrains of tea plantations and it only lasts for about 45 minutes.',
                     weather: 'Sunny, 80°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
@@ -254,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 4h 56m',
                     trailLength: '5.50 mi',
                     averageTime: '4h 56m',
-                    description: 'A challenging hike to Adam\'s Peak.',
+                    description: 'Sri Pada popularly called the Adam’s Peak is a Mountain situated in central province of Sri Lanka. The mountain has a holy footprint measuring 1. 8 meters of rock at the peak which is considered holy by Buddhists, Hindu, Muslims, and Christians. The pilgrimage is performed throughout the season from December to May though hikers accompany the devotees throughout the year.',
                     weather: 'Rainy, 65°F',
                   ),
                   isFavorite: favoriteDestinations.contains(Destination(
@@ -264,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     price: '5.50 mi | Est. 4h 56m',
                     trailLength: '5.50 mi',
                     averageTime: '4h 56m',
-                    description: 'A challenging hike to Adam\'s Peak.',
+                    description: 'Sri Pada popularly called the Adam’s Peak is a Mountain situated in central province of Sri Lanka. The mountain has a holy footprint measuring 1. 8 meters of rock at the peak which is considered holy by Buddhists, Hindu, Muslims, and Christians. The pilgrimage is performed throughout the season from December to May though hikers accompany the devotees throughout the year.',
                     weather: 'Rainy, 65°F',
                   )),
                   onFavoriteToggle: toggleFavorite,
@@ -293,51 +294,37 @@ class DetailedDestinationScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              destination.imagePath,
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 250,
-            ),
+            Image.asset(destination.imagePath),
             const SizedBox(height: 16),
             Text(
               destination.title,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
               destination.location,
-              style: const TextStyle(fontSize: 18, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              destination.description,
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
               'Trail Length: ${destination.trailLength}',
-              style: const TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
               'Average Time: ${destination.averageTime}',
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Description: ${destination.description}',
-              style: const TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 8),
             Text(
               'Weather: ${destination.weather}',
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Open a map app or navigation app with the destination location
-              },
-              icon: const Icon(Icons.navigation),
-              label: const Text('Get Directions'),
+              style: TextStyle(fontSize: 16),
             ),
           ],
         ),
@@ -362,18 +349,17 @@ class FavoriteScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final destination = favoriteDestinations[index];
           return ListTile(
-            leading: Image.asset(
-              destination.imagePath,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
-            ),
+            leading: Image.asset(destination.imagePath, width: 50, height: 50, fit: BoxFit.cover),
             title: Text(destination.title),
             subtitle: Text(destination.location),
-            trailing: IconButton(
-              icon: const Icon(Icons.favorite, color: Colors.red),
-              onPressed: () {},
-            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailedDestinationScreen(destination: destination),
+                ),
+              );
+            },
           );
         },
       ),
@@ -400,14 +386,24 @@ class PopularDestinationCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => onCardTap(destination),
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        elevation: 5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              destination.imagePath,
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 150,
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15.0),
+                topRight: Radius.circular(15.0),
+              ),
+              child: Image.asset(
+                destination.imagePath,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 150,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -416,21 +412,38 @@ class PopularDestinationCard extends StatelessWidget {
                 children: [
                   Text(
                     destination.title,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     destination.location,
-                    style: const TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     destination.price,
-                    style: const TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.blue,
+                    ),
                   ),
+                  const SizedBox(height: 4),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Text(
+                        destination.weather,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
+                      ),
                       IconButton(
                         icon: Icon(
                           isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -482,13 +495,13 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 16.0),
-      child: Column(
+      child: Row(
         children: [
           CircleAvatar(
             backgroundColor: Colors.blue.withOpacity(0.2),
             child: Icon(icon, color: Colors.blue),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(width: 8),
           Text(
             label,
             style: const TextStyle(fontSize: 14),

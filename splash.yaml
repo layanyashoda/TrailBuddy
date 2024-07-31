@@ -3,12 +3,16 @@ flutter_native_splash:
   color_dark: "#0d2243"
   image: assets/logos/splash.png
   image_dark: assets/logos/splash.png
+  android_gravity: "center"
+  ios_content_mode: "scaleAspectFill"
 
   android_12:
     color: "#0d2243"
     color_dark: "#0d2243"
     image: assets/logos/splash.png
     image_dark: assets/logos/splash.png
+    android_gravity: "center"
+    ios_content_mode: "scaleAspectFill"
 
   android: true
   ios: true
