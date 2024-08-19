@@ -2,13 +2,6 @@
 
 TrailBuddy is a mobile app that enhances hiking by providing trail discovery, accommodation booking, budget planning, safety tips, and weather updates.
 
-## System requirements
-
-- Supported Mobile Devices: iOS/Android
-- Supported Languages: English
-- Supported Countries: All Country
-
-
 ## Features
 - <strong> All-in-One Solution-</strong> TrailBuddy uniquely offers trails, accommodations, budgeting, and special deals in one app.
 - <strong> Privacy Control- </strong> TrailBuddy enhances trust and safety by allowing users to control when their location is shared.
