@@ -22,3 +22,23 @@ Contributors names and contact info
 - kavindumihiran2001 : kavindumihiran2001@gmail.com
 - Inura26 : inuramanjitha@gmail.com
 
+## Contact Information
+
+
+For any inquiries or support, please contact us at:
+
+- <strong> Layan Yashoda:
+- <strong> Miyumi Nimsara:
+- <strong> Lasantha Pradeep:
+- <strong> Kavindu Mihiran:
+- <strong> Inura Manjitha:
+  
+
+## Usage 
+
+- Trail Discovery: Browse through a variety of trails available in different regions.
+- Accommodation Booking: Find and book accommodations near your chosen trails.
+- Budget Planning: Use the budget planner to manage your hiking expenses.
+- Safety Tips: Get real-time safety tips relevant to your hiking location.
+- Weather Updates: Stay informed about the weather conditions to ensure a safe hike.
+  
